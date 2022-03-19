@@ -4,12 +4,12 @@
 #include <QOpenGLWindow>
 #include "glwindow.h"
 #include "baseentity.h"
-#include "circle.h"
-#include "rectangle.h"
 #include "entity_list.h"
 #include <math.h>
 #include <QMouseEvent>
 #include <unistd.h>
+#include "circle.h"
+#include "rectangle.h"
 
 class MainWindow : public OpenGLWindow
 {
