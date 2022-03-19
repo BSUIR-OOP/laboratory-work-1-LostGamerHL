@@ -83,7 +83,7 @@ jobs:
     - name: Qmake and make
       working-directory: d:/a/laboratory-work-1-LostGamerHL/laboratory-work-1-LostGamerHL
       run: | 
-        qmake.exe physics-simulations.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
+        qmake.exe physics-simulations.pro -spec win32-g++ "CONFIG+=release" "CONFIG+=release"
         mingw32-make.exe qmake_all
         
     - name: Check QMake and make, g++
@@ -101,20 +101,13 @@ jobs:
       run: |
         mingw32-make.exe -j8
         mkdir package
-        cp debug/physics-simulations.exe package/
+        cp release/physics-simulations.exe package/
         windeployqt.exe package/physics-simulations.exe
         Get-Location
         ls
 
-    - name: Zip package
-      uses: papeloto/action-zip@v1
-      with:
-        files: package/
-        dest: result.zip
-        recursive: true
-
-    - name: Upload zip
+    - name: Upload
       uses: actions/upload-artifact@v1
       with:
-        name: result
+        name: package/
         path: result.zip
