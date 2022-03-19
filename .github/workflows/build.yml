@@ -108,8 +108,13 @@ jobs:
 
     - name: Zip package
       uses: papeloto/action-zip@v1
-      working-directory: d:/a/laboratory-work-1-LostGamerHL/laboratory-work-1-LostGamerHL
       with:
         files: package/
         dest: result.zip
         recursive: true
+
+     - name: Upload zip
+       uses: actions/upload-artifact@v1
+       with:
+         name: result
+         path: result.zip
