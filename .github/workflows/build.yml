@@ -7,9 +7,9 @@ env:
   
 on:
   push:
-    branches: [ workflow ]
+    branches: [ master ]
   pull_request:
-    branches: [ workflow ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -38,7 +38,7 @@ jobs:
         ls C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64\bin
 
     - name: Install Qt
-      uses: jurplel/install-qt-action@v2.6.2
+      uses: jurplel/install-qt-action
       with:
         host: windows
         version: ${{ env.QT_VERSION }}
@@ -48,16 +48,16 @@ jobs:
 
     - name: Set path and refresh
       run: |
-        echo "::add-path::d:/a/qt-github-console/Qt/${{ env.QT_VERSION }}/${{ env.MINGW_PATH }}/bin"
+        echo "::add-path::d:/a/laboratory-work-1-LostGamerHL/Qt/${{ env.QT_VERSION }}/${{ env.MINGW_PATH }}/bin"
         refreshenv
         #Write-Output (Get-Command g++.exe).Path
         #g++.exe --version
         
     - name: Check availability of libraries
-      working-directory: D:/a/qt-github-console/Qt/${{ env.QT_VERSION }}/${{ env.MINGW_PATH }}/lib/
+      working-directory: D:/a/laboratory-work-1-LostGamerHL/Qt/${{ env.QT_VERSION }}/${{ env.MINGW_PATH }}/lib/
       run: |
         ls
-        ls D:/a/qt-github-console/Qt/${{ env.QT_VERSION }}/${{ env.MINGW_PATH }}/bin/
+        ls D:/a/laboratory-work-1-LostGamerHL/Qt/${{ env.QT_VERSION }}/${{ env.MINGW_PATH }}/bin/
 
     - name: Check QMake and make
       run: |
@@ -67,7 +67,7 @@ jobs:
         #mingw32-make.exe -version
     
     - name: Prepend path
-      run: echo "::add-path::d:/a/qt-github-console/Qt/${{ env.QT_VERSION }}/mingw73_32/bin"
+      run: echo "::add-path::d:/a/laboratory-work-1-LostGamerHL/Qt/${{ env.QT_VERSION }}/mingw73_32/bin"
 
     - name: Check QMake and make after prepend path
       run: |
@@ -77,9 +77,9 @@ jobs:
         #mingw32-make.exe -version
         
     - name: Qmake and make
-      working-directory: d:/a/qt-github-console/qt-github-console
+      working-directory: d:/a/laboratory-work-1-LostGamerHL/laboratory-work-1-LostGamerHL
       run: | 
-        qmake.exe qt-github-console.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" #"LIBS += D:\a\qt-github-console\Qt\5.12.7\mingw73_32\lib\libQt5Cored.a"
+        qmake.exe laboratory-work-1-LostGamerHL.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" #"LIBS += D:\a\laboratory-work-1-LostGamerHL\Qt\5.12.7\mingw73_32\lib\libQt5Cored.a"
         mingw32-make.exe qmake_all
         
     - name: Check QMake and make, g++
@@ -93,7 +93,7 @@ jobs:
         g++.exe --version 
         
     - name: Make mingw32
-      working-directory: d:/a/qt-github-console/qt-github-console
+      working-directory: d:/a/laboratory-work-1-LostGamerHL/laboratory-work-1-LostGamerHL
       run: |
         mingw32-make.exe -j8
         Get-Location
