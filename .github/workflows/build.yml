@@ -100,5 +100,23 @@ jobs:
       working-directory: d:/a/laboratory-work-1-LostGamerHL/laboratory-work-1-LostGamerHL
       run: |
         mingw32-make.exe -j8
+        mkdir package
+        cp debug/physics-simulations.exe package/
+        windeployqt.exe package/physics-simulations.exe
         Get-Location
         ls
+
+    - name: Zip package
+      working-directory: d:/a/laboratory-work-1-LostGamerHL/laboratory-work-1-LostGamerHL
+      uses: papeloto/action-zip@v1
+      with:
+        files: package/
+        dest: result.zip
+        recursive: true
+
+     - name: Upload zip
+       working-directory: d:/a/laboratory-work-1-LostGamerHL/laboratory-work-1-LostGamerHL
+       uses: actions/upload-artifact@v1
+       with:
+         name: result
+         path: result.zip
