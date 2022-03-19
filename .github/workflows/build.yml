@@ -113,8 +113,8 @@ jobs:
         dest: result.zip
         recursive: true
 
-     - name: Upload zip
-       uses: actions/upload-artifact@v1
-       with:
-         name: result
-         path: result.zip
+    - name: Upload zip
+      uses: actions/upload-artifact@v1
+      with:
+        name: result
+        path: result.zip
