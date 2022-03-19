@@ -1,6 +1,5 @@
 #include "circle.h"
 #include <QDragLeaveEvent>
-#include "entity_list.h"
 #include <math.h>
 #include "baseentity.h"
 #include <QOpenGLContext>

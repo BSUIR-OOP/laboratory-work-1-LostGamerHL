@@ -2,7 +2,6 @@
 #include <GL/gl.h>
 #include <QOpenGLContext>
 #include <QDragLeaveEvent>
-#include "entity_list.h"
 #include <math.h>
 #include "baseentity.h"
 
