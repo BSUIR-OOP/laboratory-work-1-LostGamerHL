@@ -2,10 +2,9 @@
 #define PHYSICS_H
 
 #include "baseentity.h"
+#include <QQueue>
 #include "circle.h"
 #include "rectangle.h"
-#include <QQueue>
-
 
 struct EntityList;
 class Physics;
