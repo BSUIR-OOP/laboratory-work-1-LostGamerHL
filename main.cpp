@@ -5,11 +5,11 @@
 #include "glwindow.h"
 #include "baseentity.h"
 #include "circle.h"
+#include "rectangle.h"
 #include "entity_list.h"
 #include <math.h>
 #include <QMouseEvent>
 #include <unistd.h>
-#include "rectangle.h"
 
 class MainWindow : public OpenGLWindow
 {
@@ -87,7 +87,7 @@ int main(int argc, char **argv)
 	QGuiApplication app(argc, argv);
 
     QSurfaceFormat format;
-    format.setSamples(60);
+    format.setSamples(10);
 
     MainWindow window;
     window.setFormat(format);
