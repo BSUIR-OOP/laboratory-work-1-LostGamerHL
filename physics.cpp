@@ -1,6 +1,8 @@
 #include "physics.h"
 #include <math.h>
 #include "entity_list.h"
+#include "rectangle.h"
+#include "circle.h"
 
 void Physics::Process( EntityList *entities )
 {
