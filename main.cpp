@@ -35,8 +35,8 @@ private:
 
 void MainWindow::initialize()
 {
-	glOrtho(0, width(), 0, height(), -1, 1);
-
+	QOpenGLFunctions_2_1 *qGL = QOpenGLContext::currentContext()->versionFunctions<QOpenGLFunctions_2_1>();
+	qGL->glOrtho(0, width(), 0, height(), -1, 1);
 	
 	RectAngle *rect = new RectAngle(1080, 15);
 	rect->setOrigin(vector2D(100, 50));
