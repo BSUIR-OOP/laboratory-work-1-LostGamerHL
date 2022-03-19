@@ -2,6 +2,7 @@
 #include <QOpenGLShaderProgram>
 #include <QScreen>
 #include <QOpenGLWindow>
+#include <QOpenGLFunctions_2_1>
 #include "glwindow.h"
 #include "baseentity.h"
 #include "circle.h"
@@ -72,12 +73,14 @@ void MainWindow::mouseMoveEvent(QMouseEvent *e)
 
 void MainWindow::render()
 {
+	QOpenGLFunctions_2_1 *qGL = QOpenGLContext::currentContext()->versionFunctions<QOpenGLFunctions_2_1>();
+	
 	const qreal retinaScale = devicePixelRatio();
 	
-	glViewport(0, 0, width()*retinaScale, height()*retinaScale);
+	qGL->glViewport(0, 0, width()*retinaScale, height()*retinaScale);
 	
-	glClearColor(1.f, 1.f, 1.f, 1.f);
-	glClear(GL_COLOR_BUFFER_BIT);
+	qGL->glClearColor(1.f, 1.f, 1.f, 1.f);
+	qGL->glClear(GL_COLOR_BUFFER_BIT);
 
 	entities.processPhysics();	
 	entities.render();
