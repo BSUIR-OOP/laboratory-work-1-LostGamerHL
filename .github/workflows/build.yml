@@ -47,6 +47,8 @@ jobs:
         extra: --external 7z
 
     - name: Set path and refresh
+      env:
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       run: |
         echo "::add-path::d:/a/laboratory-work-1-LostGamerHL/Qt/${{ env.QT_VERSION }}/${{ env.MINGW_PATH }}/bin"
         refreshenv
@@ -67,6 +69,7 @@ jobs:
         #mingw32-make.exe -version
     
     - name: Prepend path
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       run: echo "::add-path::d:/a/laboratory-work-1-LostGamerHL/Qt/${{ env.QT_VERSION }}/mingw73_32/bin"
 
     - name: Check QMake and make after prepend path
