@@ -3,7 +3,6 @@
 
 #include "baseentity.h"
 #include <malloc.h>
-#include "physics.h"
 
 struct EntityList
 {

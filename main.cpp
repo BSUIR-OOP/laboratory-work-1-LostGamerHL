@@ -37,15 +37,15 @@ void MainWindow::initialize()
 	glOrtho(0, width(), 0, height(), -1, 1);
 
 	
-	Rectangle *rect = new Rectangle(1080, 15);
+	RectAngle *rect = new RectAngle(1080, 15);
 	rect->setOrigin(vector2D(100, 50));
 	rect->setStatic(true);
 	
-	Rectangle *rect2 = new Rectangle(15, 400);
+	RectAngle *rect2 = new RectAngle(15, 400);
 	rect2->setOrigin(vector2D(100, 80));
 	rect2->setStatic(true);
 
-	Rectangle *rect3 = new Rectangle(15, 400);
+	RectAngle *rect3 = new RectAngle(15, 400);
 	rect3->setOrigin(vector2D(1165, 80));	
 	rect3->setStatic(true);
 	

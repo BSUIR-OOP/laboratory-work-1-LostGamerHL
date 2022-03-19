@@ -1,17 +1,14 @@
 #include "rectangle.h"
-#include <GL/gl.h>
 #include <QOpenGLContext>
-#include <QDragLeaveEvent>
-#include <math.h>
 #include "baseentity.h"
 
-Rectangle::Rectangle(  float flSizeX, float flSizeY  ) : BaseEntity()
+RectAngle::RectAngle(  float flSizeX, float flSizeY  ) : BaseEntity()
 {
 	m_flSizeX = flSizeX;
 	m_flSizeY = flSizeY;
 }
 
-void Rectangle::render()
+void RectAngle::render()
 {
 	vector2D vecReal1 = origin;
 	vector2D vecReal2 = vector2D( m_flSizeX + origin.x, m_flSizeY + origin.y );
