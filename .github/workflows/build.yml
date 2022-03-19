@@ -105,3 +105,11 @@ jobs:
         windeployqt.exe package/physics-simulations.exe
         Get-Location
         ls
+
+    - name: Zip package
+      working-directory: d:/a/laboratory-work-1-LostGamerHL/laboratory-work-1-LostGamerHL
+      uses: papeloto/action-zip@v1
+      with:
+        files: package/
+        dest: result.zip
+        recursive: true
