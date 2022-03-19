@@ -102,12 +102,12 @@ jobs:
         mingw32-make.exe -j8
         mkdir package
         cp release/physics-simulations.exe package/
-        windeployqt.exe package/physics-simulations.exe
+        windeployqt.exe --verbose 2 package/physics-simulations.exe
         Get-Location
         ls
 
     - name: Upload
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v3
       with:
-        name: package/
-        path: result.zip
+        name: result
+        path: package/
