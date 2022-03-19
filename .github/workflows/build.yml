@@ -83,7 +83,7 @@ jobs:
     - name: Qmake and make
       working-directory: d:/a/laboratory-work-1-LostGamerHL/laboratory-work-1-LostGamerHL
       run: | 
-        qmake.exe laboratory-work-1-LostGamerHL.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" #"LIBS += D:\a\laboratory-work-1-LostGamerHL\Qt\5.12.7\mingw73_32\lib\libQt5Cored.a"
+        qmake.exe physics-simulations.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
         mingw32-make.exe qmake_all
         
     - name: Check QMake and make, g++
