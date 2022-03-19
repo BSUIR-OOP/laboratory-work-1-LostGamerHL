@@ -1,6 +1,6 @@
 #include "rectangle.h"
 #include <GL/gl.h>
-#include <GLES3/gl32.h>
+#include <QOpenGLContext>
 #include <QDragLeaveEvent>
 #include "entity_list.h"
 #include <math.h>

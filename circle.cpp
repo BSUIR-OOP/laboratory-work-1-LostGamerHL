@@ -1,10 +1,9 @@
 #include "circle.h"
-#include <GL/gl.h>
-#include <GLES3/gl32.h>
 #include <QDragLeaveEvent>
 #include "entity_list.h"
 #include <math.h>
 #include "baseentity.h"
+#include <QOpenGLContext>
 
 #define N_TRIANGLES 15
 
