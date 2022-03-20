@@ -102,7 +102,7 @@ jobs:
         mingw32-make.exe -j8
         mkdir package
         cp release/physics-simulations.exe package/
-        windeployqt.exe --verbose 2 package/physics-simulations.exe
+        windeployqt.exe --compiler-runtime package/physics-simulations.exe
         Get-Location
         ls
 
