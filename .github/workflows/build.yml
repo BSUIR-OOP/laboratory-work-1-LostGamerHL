@@ -35,7 +35,7 @@ jobs:
         choco uninstall strawberryperl --force
 
     - name: Install Qt
-      uses: jurplel/install-qt-action@v2.14.0
+      uses: LostGamerHL/install-qt-action@v2.14.0
       with:
         host: 'windows'
         target: 'desktop'
