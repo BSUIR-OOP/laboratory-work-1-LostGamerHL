@@ -104,7 +104,7 @@ jobs:
         mingw32-make.exe -j8
         mkdir package
         cp release/physics-simulations.exe package/
-        echo %PATH%
+        $env:PATH
         windeployqt.exe --compiler-runtime package/physics-simulations.exe
         Get-Location
         ls
