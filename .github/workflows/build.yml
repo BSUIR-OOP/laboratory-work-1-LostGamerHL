@@ -24,15 +24,15 @@ jobs:
 
     - uses: actions/checkout@v2
 
-    - name: Check mingw g++ version
-      run: |
-        Write-Output (Get-Command g++.exe).Path
-        g++.exe --version
+#    - name: Check mingw g++ version
+#      run: |
+#        Write-Output (Get-Command g++.exe).Path
+#        g++.exe --version
 
-    - name: Uninstall mingw
-      run: |
-        choco uninstall mingw --force
-        choco uninstall strawberryperl --force
+#    - name: Uninstall mingw
+#      run: |
+#        choco uninstall mingw --force
+#        choco uninstall strawberryperl --force
 
     - name: Install Qt
       uses: LostGamerHL/install-qt-action@v3
