@@ -4,12 +4,14 @@ env:
   QT_VERSION:     "5.12.7"
   MINGW_VERSION:  "win64_mingw73"
   MINGW_PATH:     "mingw73_64"
-  
+
 on:
   push:
-    branches: [ workflow ]
+    branches:
+      - "*"
   pull_request:
-    branches: [ workflow ]
+    branches:
+      - "*"
 
 jobs:
   build:
